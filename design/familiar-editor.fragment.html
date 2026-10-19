@@ -1,0 +1,204 @@
+<style>
+#storylens-designs .sl-window{--sl-bg:light-dark(#faf9f6,#20221f);--sl-paper:light-dark(#fffefa,#242622);--sl-side:light-dark(#f0efea,#1b1e1a);--sl-ink:light-dark(#30372e,#e3e5da);--sl-muted:light-dark(#71766a,#a8ae9f);--sl-line:light-dark(#e1e3d9,#3a3f34);--sl-accent:light-dark(#536b4b,#b4cba3);--sl-active:light-dark(#e2e8db,#394733);--sl-reading-size:19px;--sl-leading:1.85;--sl-measure:57ch;color-scheme:light dark;font:14px/1.5 'Segoe UI',Arial,sans-serif;color:var(--sl-ink);background:var(--sl-bg);min-height:748px;display:flex;flex-direction:column;border:1px solid var(--sl-line);border-radius:9px;overflow:clip;box-sizing:border-box}
+#storylens-designs .sl-window *{box-sizing:border-box}
+#storylens-designs [hidden]{display:none!important}
+#storylens-designs .sl-window button,#storylens-designs .sl-window select{font:inherit;color:inherit}
+#storylens-designs .sl-window button{border:0;background:transparent;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:7px 11px;border-radius:5px;text-align:left;min-height:34px}
+#storylens-designs .sl-window button:hover{background:var(--sl-active)}
+#storylens-designs .sl-window button:focus-visible,#storylens-designs .sl-window select:focus-visible{outline:2px solid var(--sl-accent);outline-offset:2px}
+#storylens-designs .sl-window button[aria-pressed=true]{background:var(--sl-active);color:var(--sl-accent)}
+#storylens-designs .sl-window svg{flex-shrink:0;width:17px;height:17px}
+#storylens-designs .sl-masthead{padding:14px 20px;display:flex;align-items:center;gap:14px;min-height:62px;border-bottom:1px solid var(--sl-line);flex-wrap:wrap}
+#storylens-designs .sl-brand{font-weight:500;display:flex;align-items:center;gap:8px;letter-spacing:-.3px}
+#storylens-designs .sl-bookname{font-size:13px;color:var(--sl-muted);padding-left:14px;border-left:1px solid var(--sl-line)}
+#storylens-designs .sl-spacer{flex:1}
+#storylens-designs .sl-masthead .sl-save{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--sl-muted)}
+#storylens-designs .sl-viewnav{display:flex;gap:8px;padding:10px 18px;border-bottom:1px solid var(--sl-line);align-items:center;flex-wrap:wrap}
+#storylens-designs .sl-viewnav button{padding:6px 12px}
+#storylens-designs .sl-layout{display:grid;grid-template-columns:184px minmax(0,1fr);flex:1;align-items:stretch;min-width:0}
+#storylens-designs .sl-window.sl-materials-on .sl-layout{grid-template-columns:176px minmax(0,1fr) 230px}
+#storylens-designs .sl-sidebar{background:var(--sl-side);padding:24px 12px;border-right:1px solid var(--sl-line);min-width:0}
+#storylens-designs .sl-sectionlabel{font-size:12px;color:var(--sl-muted);font-weight:500;margin:0 10px 14px;letter-spacing:.6px;text-transform:uppercase}
+#storylens-designs .sl-chapters{display:grid;gap:5px}
+#storylens-designs .sl-chapters button{display:flex;justify-content:flex-start;align-items:flex-start;gap:10px;width:100%;padding:11px 10px;line-height:1.5}
+#storylens-designs .sl-num{font-size:12px;color:var(--sl-muted);padding-top:1px;flex-shrink:0}
+#storylens-designs .sl-chapters small{display:block;font-size:12px;color:var(--sl-muted);font-weight:400;margin-top:2px}
+#storylens-designs .sl-sidefoot{font-size:12px;color:var(--sl-muted);margin:30px 10px 0}
+#storylens-designs .sl-main{background:var(--sl-paper);min-width:0;display:flex;flex-direction:column}
+#storylens-designs .sl-toolbar{display:flex;align-items:center;gap:15px;min-height:44px;padding:7px 24px;border-bottom:1px solid var(--sl-line);font-size:13px;color:var(--sl-muted);flex-wrap:wrap}
+#storylens-designs .sl-formatset{display:flex;gap:17px;align-items:center;color:var(--sl-ink)}
+#storylens-designs .sl-formatset span{min-width:13px;text-align:center}
+#storylens-designs .sl-formatrule{height:18px;width:1px;background:var(--sl-line)}
+#storylens-designs .sl-pane{padding:35px clamp(20px,4.3vw,58px) 42px;flex:1;min-width:0}
+#storylens-designs .sl-breadcrumb{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--sl-muted);margin-bottom:15px}
+#storylens-designs .sl-document{max-width:var(--sl-measure);margin:0 auto;font-family:Georgia,'Times New Roman',serif;font-size:var(--sl-reading-size);line-height:var(--sl-leading)}
+#storylens-designs .sl-document h2{font:400 32px/1.25 Georgia,'Times New Roman',serif;letter-spacing:-.6px;margin:0 0 26px;color:var(--sl-ink)}
+#storylens-designs .sl-document p{font:inherit;color:inherit;margin:0 0 18px}
+#storylens-designs .sl-document p.sl-dialogue{margin-bottom:12px}
+#storylens-designs .sl-document .sl-break{display:block;text-align:center;letter-spacing:10px;margin:23px 0;color:var(--sl-muted);font-size:14px}
+#storylens-designs .sl-window{min-height:870px}
+#storylens-designs .sl-formatset .sl-formatrule{min-width:1px}
+#storylens-designs .sl-endmark{display:inline-block;height:1.05em;width:1px;vertical-align:middle;background:var(--sl-accent);margin-left:2px}
+#storylens-designs .sl-footer{border-top:1px solid var(--sl-line);padding:9px 18px;display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--sl-muted);flex-wrap:wrap}
+#storylens-designs .sl-materials{padding:22px 17px;background:var(--sl-bg);border-left:1px solid var(--sl-line);min-width:0}
+#storylens-designs .sl-panelhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;font-weight:500}
+#storylens-designs .sl-materialnav{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:24px}
+#storylens-designs .sl-materialnav button{padding:6px 7px;font-size:12px}
+#storylens-designs .sl-refname{font-family:Georgia,'Times New Roman',serif;font-size:26px;line-height:1.2;font-weight:400;margin:0 0 7px}
+#storylens-designs .sl-reftype{color:var(--sl-muted);font-size:12px;margin:0 0 22px}
+#storylens-designs .sl-refbody{font-size:14px;line-height:1.7}
+#storylens-designs .sl-refbody p{margin:0 0 17px}
+#storylens-designs .sl-refbody h4{font:500 13px/1.5 'Segoe UI',Arial,sans-serif;margin:24px 0 7px}
+#storylens-designs .sl-note{border-left:2px solid var(--sl-accent);padding-left:13px;margin:23px 0;color:var(--sl-muted)}
+#storylens-designs .sl-letter{font-family:Georgia,'Times New Roman',serif;font-size:48px;line-height:1.1;margin-bottom:22px;color:var(--sl-accent)}
+#storylens-designs .sl-board h2,#storylens-designs .sl-timeline h2{font:400 29px/1.25 Georgia,'Times New Roman',serif;margin:0 0 8px}
+#storylens-designs .sl-subtitle{font-size:13px;color:var(--sl-muted);margin:0 0 27px}
+#storylens-designs .sl-scene{display:grid;grid-template-columns:28px minmax(0,1fr);gap:13px;border-top:1px solid var(--sl-line);padding:20px 0}
+#storylens-designs .sl-scene:first-of-type{border-top:0}
+#storylens-designs .sl-scene .sl-order{font-family:Georgia,'Times New Roman',serif;font-size:22px;color:var(--sl-accent)}
+#storylens-designs .sl-scene h3{font-size:16px;font-weight:500;margin:0 0 6px}
+#storylens-designs .sl-scene p{font-size:14px;line-height:1.7;margin:0 0 8px}
+#storylens-designs .sl-scene small{font-size:12px;color:var(--sl-muted)}
+#storylens-designs .sl-event{display:grid;grid-template-columns:81px minmax(0,1fr);gap:21px;margin:0 0 5px}
+#storylens-designs .sl-event time{font-size:12px;color:var(--sl-muted);padding-top:2px}
+#storylens-designs .sl-eventbody{position:relative;border-left:1px solid var(--sl-line);padding:0 0 30px 23px}
+#storylens-designs .sl-eventbody:before{content:'';position:absolute;left:-4px;top:6px;width:7px;height:7px;border-radius:50%;background:var(--sl-accent)}
+#storylens-designs .sl-event h3{margin:0 0 7px;font-size:15px;font-weight:500}
+#storylens-designs .sl-event p{margin:0;font-size:14px;line-height:1.7;color:var(--sl-muted)}
+#storylens-designs .sl-window.sl-focus .sl-sidebar,#storylens-designs .sl-window.sl-focus .sl-materials,#storylens-designs .sl-window.sl-focus .sl-viewnav,#storylens-designs .sl-window.sl-focus .sl-ribbon,#storylens-designs .sl-window.sl-focus .sl-chapterstrip{display:none!important}
+#storylens-designs .sl-window.sl-focus .sl-layout{grid-template-columns:minmax(0,1fr)}
+#storylens-designs .sl-window.sl-focus .sl-pane{padding-top:49px}
+#storylens-designs .sl-window.sl-focus .sl-toolbar{display:none}
+#storylens-designs .sl-fluent{--sl-bg:light-dark(#f5f7fb,#1c232b);--sl-paper:light-dark(#ffffff,#242b34);--sl-side:light-dark(#f1f4f9,#202731);--sl-ink:light-dark(#293447,#e2e9f2);--sl-muted:light-dark(#687588,#a9b5c5);--sl-line:light-dark(#dce2ec,#3a4655);--sl-accent:light-dark(#3464a2,#a3c8f4);--sl-active:light-dark(#e0eafa,#314865);--sl-measure:58ch;--sl-reading-size:18px;border-radius:6px}
+#storylens-designs .sl-fluent .sl-masthead{min-height:48px;padding:9px 18px}
+#storylens-designs .sl-fluent .sl-viewnav{background:var(--sl-paper);padding:0 15px;gap:3px}
+#storylens-designs .sl-fluent .sl-viewnav button{border-radius:0;padding:10px 14px;border-bottom:2px solid transparent}
+#storylens-designs .sl-fluent .sl-viewnav button[aria-pressed=true]{background:transparent;border-bottom-color:var(--sl-accent)}
+#storylens-designs .sl-ribbon{display:flex;align-items:center;gap:23px;min-height:61px;padding:10px 24px;background:var(--sl-bg);border-bottom:1px solid var(--sl-line);flex-wrap:wrap}
+#storylens-designs .sl-ribbongroup{display:flex;gap:17px;align-items:center;font-size:14px}
+#storylens-designs .sl-ribbonlabel{font-size:12px;color:var(--sl-muted);padding-left:18px;border-left:1px solid var(--sl-line)}
+#storylens-designs .sl-fluent .sl-document{font-family:Cambria,Georgia,serif}
+#storylens-designs .sl-fluent .sl-document h2{font-family:Cambria,Georgia,serif;font-size:30px}
+#storylens-designs .sl-fluent .sl-sidebar{padding-top:22px}
+#storylens-designs .sl-fluent .sl-chapters button{border-radius:4px}
+#storylens-designs .sl-fluent .sl-toolbar{background:var(--sl-paper);font-size:12px;min-height:37px}
+#storylens-designs .sl-desk{--sl-bg:light-dark(#f2efeb,#211e1d);--sl-paper:light-dark(#fffdfa,#292421);--sl-side:light-dark(#ebe5df,#24201e);--sl-ink:light-dark(#403a35,#ece0d6);--sl-muted:light-dark(#7c7066,#b8a99a);--sl-line:light-dark(#ded6cc,#473e37);--sl-accent:light-dark(#94644e,#dfb59e);--sl-active:light-dark(#eadbd0,#4e392e);--sl-measure:56ch;--sl-reading-size:19px}
+#storylens-designs .sl-desk .sl-masthead{padding:18px 25px;min-height:76px;background:var(--sl-side)}
+#storylens-designs .sl-desk .sl-brand{font-family:Georgia,serif;font-size:21px;letter-spacing:-.5px}
+#storylens-designs .sl-desk .sl-bookname{border:0;padding:0;display:block;letter-spacing:0;font:12px/1.6 'Segoe UI',sans-serif}
+#storylens-designs .sl-desk .sl-viewnav{padding:10px 20px}
+#storylens-designs .sl-desk .sl-layout{grid-template-columns:minmax(0,1fr)}
+#storylens-designs .sl-desk.sl-materials-on .sl-layout{grid-template-columns:minmax(0,1fr) 265px}
+#storylens-designs .sl-desk .sl-materials{background:var(--sl-side);padding:25px 23px}
+#storylens-designs .sl-chapterstrip{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 21px;border-bottom:1px solid var(--sl-line);font-size:12px;background:var(--sl-bg)}
+#storylens-designs .sl-chapterstrip label{color:var(--sl-muted);margin-right:8px}
+#storylens-designs .sl-chapterstrip select{background:var(--sl-paper);border:1px solid var(--sl-line);border-radius:5px;padding:5px 9px;max-width:100%}
+#storylens-designs .sl-desk .sl-document h2{font-size:34px}
+#storylens-designs .sl-desk .sl-toolbar{border:0;padding-top:16px;justify-content:flex-end}
+@media(max-width:840px){#storylens-designs .sl-window.sl-materials-on .sl-layout{grid-template-columns:158px minmax(0,1fr)}#storylens-designs .sl-window.sl-materials-on .sl-materials{grid-column:1/-1;border-left:0;border-top:1px solid var(--sl-line);display:grid;grid-template-columns:190px minmax(0,1fr);gap:0 22px}#storylens-designs .sl-window.sl-materials-on .sl-panelhead{grid-column:1/-1}#storylens-designs .sl-window.sl-materials-on .sl-ref{grid-column:2;grid-row:2/span 2}#storylens-designs .sl-desk.sl-materials-on .sl-layout{grid-template-columns:minmax(0,1fr)}#storylens-designs .sl-pane{padding-left:26px;padding-right:26px}}
+@media(max-width:580px){#storylens-designs .sl-window{min-height:1020px}#storylens-designs .sl-layout,#storylens-designs .sl-window.sl-materials-on .sl-layout{grid-template-columns:minmax(0,1fr)}#storylens-designs .sl-sidebar{padding:12px 10px;border-right:0;border-bottom:1px solid var(--sl-line)}#storylens-designs .sl-chapters{grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}#storylens-designs .sl-chapters button{padding:8px 6px;font-size:12px;gap:6px}#storylens-designs .sl-chapters small,#storylens-designs .sl-sidefoot{display:none}#storylens-designs .sl-sectionlabel{margin-bottom:6px}#storylens-designs .sl-masthead{padding:12px;gap:10px}#storylens-designs .sl-bookname{display:none}#storylens-designs .sl-masthead .sl-save{display:none}#storylens-designs .sl-viewnav{gap:3px;padding:7px 8px}#storylens-designs .sl-viewnav button{font-size:12px;padding:7px}#storylens-designs .sl-pane{padding:26px 20px 32px}#storylens-designs .sl-toolbar{padding:9px 16px;gap:10px}#storylens-designs .sl-window.sl-materials-on .sl-materials{display:block}#storylens-designs .sl-materialnav{margin-bottom:18px}#storylens-designs .sl-document h2{font-size:28px}#storylens-designs .sl-ribbon{padding:10px 14px;gap:14px}#storylens-designs .sl-ribbonlabel{display:none}#storylens-designs .sl-event{grid-template-columns:61px minmax(0,1fr);gap:10px}#storylens-designs .sl-desk .sl-masthead{padding:15px}#storylens-designs .sl-desk .sl-brand{font-size:18px}}
+@media(pointer:coarse){#storylens-designs .sl-window button{min-height:44px}}
+</style>
+<div id="storylens-designs" aria-label="Знакомый редактор">
+  <section data-variant="Знакомый редактор" aria-label="Знакомый редактор">
+    <div class="sl-window sl-fluent" data-design="familiar" aria-label="Знакомый редактор — оформление">
+      <header class="sl-masthead"><div class="sl-brand"><i aria-hidden="true" style="font-style:normal"></i>StoryLens</div><div class="sl-bookname">Дорога к морю</div><span class="sl-spacer"></span><button class="cursor-interaction" data-action="focus" aria-pressed="false"><i aria-hidden="true" style="font-style:normal">⤢</i><span>Только текст</span></button></header>
+      <nav class="sl-viewnav" aria-label="Разделы книги"><button class="cursor-interaction" data-view="text" aria-pressed="true">Текст</button><button class="cursor-interaction" data-view="plan" aria-pressed="false">План сцен</button><button class="cursor-interaction" data-view="timeline" aria-pressed="false">Хронология</button><span class="sl-spacer"></span><button class="cursor-interaction" data-action="materials" aria-pressed="false">Материалы</button></nav>
+      <div class="sl-ribbon" aria-label="Образец панели оформления"><div class="sl-ribbongroup"><span>Основной текст</span><i aria-hidden="true" style="font-style:normal">⌄</i></div><span class="sl-formatrule"></span><div class="sl-ribbongroup"><span style="font-weight:500">Ж</span><span style="font-style:italic">К</span><span style="text-decoration:underline">Ч</span></div><span class="sl-formatrule"></span><div class="sl-ribbongroup"><i aria-hidden="true" style="font-style:normal">≡</i><i aria-hidden="true" style="font-style:normal">☷</i><i aria-hidden="true" style="font-style:normal">“ ”</i></div><span class="sl-ribbonlabel">Оформление текста</span></div>
+      <div class="sl-layout"><aside class="sl-sidebar" aria-label="Главы книги"><p class="sl-sectionlabel">Главы книги</p><nav class="sl-chapters" aria-label="Выбрать главу"><button class="cursor-interaction" data-chapter="0" aria-pressed="false"><i aria-hidden="true" style="font-style:normal"></i><span>1. Письмо</span></button><button class="cursor-interaction" data-chapter="1" aria-pressed="false"><i aria-hidden="true" style="font-style:normal"></i><span>2. Чужой город</span></button><button class="cursor-interaction" data-chapter="2" aria-pressed="true"><i aria-hidden="true" style="font-style:normal"></i><span>3. Станция у моря</span></button></nav><p class="sl-sidefoot">Дорога к морю</p></aside><main class="sl-main"><div class="sl-toolbar">Книга первая <i aria-hidden="true" style="font-style:normal">›</i><span data-chapter-label>Станция у моря</span></div><div class="sl-pane" data-pane></div></main><aside class="sl-materials" aria-label="Материалы книги" data-material-panel hidden></aside></div>
+      <footer class="sl-footer"><span data-context>Глава 3 из 3</span><span>Русский · непрерывный текст</span></footer>
+    </div>
+  </section>
+</div>
+<template id="sl-document-template"><article class="sl-document"><div class="sl-breadcrumb" data-document-kicker>Глава третья</div><h2 data-document-title>Станция у моря</h2><div data-document-prose><p>Поезд ушёл, и станция сразу стала маленькой. Остались мокрые рельсы, пустая скамейка и женщина в синем плаще у закрытой кассы.</p><p>Лида поставила чемодан на землю. В детстве ей казалось, что море начинается прямо за вокзалом. Теперь за ним стоял продуктовый магазин, а дальше тянулись одинаковые серые заборы.</p><p class="sl-dialogue">— Вы к кому? — спросила женщина.</p><p class="sl-dialogue">— К Марине Соколовой.</p><p>Женщина посмотрела на чемодан. За домами протяжно загудел корабль, и Лида наконец почувствовала запах соли.<span class="sl-endmark" aria-hidden="true"></span></p></div></article></template>
+<template id="sl-plan-template"><section class="sl-board" aria-label="План сцен"><h2>План сцен</h2><p class="sl-subtitle">Глава 3 · Станция у моря</p><article class="sl-scene"><span class="sl-order">1</span><div><h3>Возвращение</h3><p>Лида приезжает в город детства. На станции её встречает незнакомая женщина, которая знает Марину.</p><small>Станция · Лида, смотрительница</small></div></article><article class="sl-scene"><span class="sl-order">2</span><div><h3>Дорога к дому</h3><p>Город изменился. Лида сворачивает к морю и решает отложить встречу с матерью.</p><small>Старый город · Лида</small></div></article><article class="sl-scene"><span class="sl-order">3</span><div><h3>Открытая дверь</h3><p>Дом пуст, но на кухне ещё тёплый чай. На столе лежит второе письмо.</p><small>Дом Марины · Лида</small></div></article></section></template>
+<template id="sl-timeline-template"><section class="sl-timeline" aria-label="Хронология истории"><h2>Хронология</h2><p class="sl-subtitle">События книги по порядку</p><div class="sl-event"><time>За 12 лет<br>до приезда</time><div class="sl-eventbody"><h3>Лида уезжает из города</h3><p>После ссоры с матерью она обещает больше не возвращаться.</p></div></div><div class="sl-event"><time>14 октября</time><div class="sl-eventbody"><h3>Первое письмо</h3><p>Среди старых бумаг Лида находит конверт с незнакомым почерком.</p></div></div><div class="sl-event"><time>16 октября</time><div class="sl-eventbody"><h3>Дорога к морю</h3><p>Ночной поезд. Разговор с попутчиком о старой пристани.</p></div></div><div class="sl-event"><time>17 октября<br>Утро</time><div class="sl-eventbody"><h3>Возвращение на станцию</h3><p>Глава 3. Смотрительница узнаёт фамилию Лиды.</p></div></div><div class="sl-event"><time>17 октября<br>После полудня</time><div class="sl-eventbody"><h3>Второе письмо</h3><p>В пустом доме Лида находит объяснение, которого ждала двенадцать лет.</p></div></div></section></template>
+<template id="sl-materials-template"><div class="sl-panelhead"><span>Материалы</span><button class="cursor-interaction" data-action="materials" aria-label="Закрыть материалы"><i aria-hidden="true" style="font-style:normal">×</i></button></div><nav class="sl-materialnav" aria-label="Виды материалов"><button class="cursor-interaction" data-material="character" aria-pressed="true">Персонажи</button><button class="cursor-interaction" data-material="world" aria-pressed="false">Мир</button><button class="cursor-interaction" data-material="notes" aria-pressed="false">Заметки</button></nav><div class="sl-ref" data-ref></div></template>
+<template id="sl-character-template"><div class="sl-letter" aria-hidden="true">Л.</div><h3 class="sl-refname">Лида Соколова</h3><p class="sl-reftype">Главная героиня</p><div class="sl-refbody"><p>Переводчица, 32 года. Вернулась в родной город после двенадцати лет молчания.</p><h4>Что важно помнить</h4><p>Когда нервничает, крутит кольцо на правой руке. Называет мать по имени.</p><div class="sl-note">Она приехала за ответами, но боится задать первый вопрос.</div></div></template>
+<template id="sl-world-template"><div class="sl-letter" aria-hidden="true"><i aria-hidden="true" style="font-style:normal">≈</i></div><h3 class="sl-refname">Приморск</h3><p class="sl-reftype">Место действия</p><div class="sl-refbody"><p>Небольшой портовый город. От станции до старой пристани — двадцать минут пешком.</p><h4>Атмосфера</h4><p>Соль на окнах, низкое небо, пустые дачи. После сентября город принадлежит местным.</p><div class="sl-note">Море слышно из дома Марины, но не видно.</div></div></template>
+<template id="sl-notes-template"><h3 class="sl-refname">К этой главе</h3><p class="sl-reftype">Свободные заметки</p><div class="sl-refbody"><p>Не рассказывать сразу, почему Лида уехала. Пусть это станет понятно из разговора с матерью.</p><h4>Деталь для сцены</h4><p>Старое расписание электричек до сих пор висит у кассы. Лида узнаёт почерк отца.</p><div class="sl-note">Вернуться к образу пустой скамейки в последней главе.</div></div></template>
+<script>
+(() => {
+  const root = document.getElementById('storylens-designs');
+  const names = ['Письмо', 'Чужой город', 'Станция у моря'];
+  const kickers = ['Глава первая', 'Глава вторая', 'Глава третья'];
+  const prose = [
+    ['Письмо лежало между квитанцией за свет и старой открыткой. Лида вытащила конверт и сразу узнала бумагу: такими листами мать застилала ящики комода.', 'На конверте не было ни марки, ни обратного адреса. Только её имя, написанное незнакомой рукой.', 'За окном стемнело. Она включила лампу, пододвинула чашку и ещё несколько минут смотрела на закрытый конверт.', 'Потом встала и достала с верхней полки чемодан.'],
+    ['Ночью город был похож на фотографию, которую забыли проявить. За стеклом такси проплывали вывески, остановки и тёмные окна чужих кухонь.', 'Лида прижала лоб к холодному стеклу. Она не знала ни одной улицы, но почему-то была уверена: водитель везёт её в другую сторону.', 'На вокзале пахло кофе и свежей краской. До отправления оставалось сорок минут.', 'Она купила билет до конечной и только тогда позвонила домой. Никто не ответил.']
+  ];
+  let saved = window.openai?.widgetState || {};
+  const entries = [];
+  const clone = id => document.getElementById(id).content.cloneNode(true);
+  function persist() {
+    if (!window.openai?.setWidgetState) return;
+    const views = Object.fromEntries(entries.map(({app,state}) => [app.dataset.design, {view:state.view, chapter:state.chapter, materials:state.materials, material:state.material, focus:state.focus}]));
+    window.openai.setWidgetState({modelContent:{designs:views}, privateContent:null}).catch(() => {});
+  }
+  function icons() { if (globalThis.lucide) lucide.createIcons({attrs:{width:16,height:16}}); }
+  root.querySelectorAll('[data-design]').forEach(app => {
+    const id = app.dataset.design;
+    const state = {view:'text',chapter:2,materials:id==='desk',material:'character',focus:false,size:id==='familiar'?18:19,leading:1.85,measure:id==='desk'?56:57};
+    function restore(value) {
+      if (!value || typeof value !== 'object') return;
+      if (['text','plan','timeline'].includes(value.view)) state.view=value.view;
+      if (Number.isInteger(value.chapter) && value.chapter>=0 && value.chapter<=2) state.chapter=value.chapter;
+      if (typeof value.materials==='boolean') state.materials=value.materials;
+      if (['character','world','notes'].includes(value.material)) state.material=value.material;
+      if (typeof value.focus==='boolean') state.focus=value.focus;
+    }
+    restore(saved.modelContent?.designs?.[id]);
+    const pane=app.querySelector('[data-pane]');
+    pane.setAttribute('aria-live','polite');
+    const materialPanel=app.querySelector('[data-material-panel]');
+    materialPanel.append(clone('sl-materials-template'));
+    function renderMaterial() {
+      materialPanel.querySelector('[data-ref]').replaceChildren(clone('sl-'+state.material+'-template'));
+      materialPanel.querySelectorAll('[data-material]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.material===state.material)));
+      icons();
+    }
+    function renderContent() {
+      pane.replaceChildren(clone(state.view==='text'?'sl-document-template':state.view==='plan'?'sl-plan-template':'sl-timeline-template'));
+      if(state.view==='text') {
+        pane.querySelector('[data-document-title]').textContent=names[state.chapter];
+        pane.querySelector('[data-document-kicker]').textContent=kickers[state.chapter];
+        if(state.chapter<2) {
+          const body=pane.querySelector('[data-document-prose]');body.replaceChildren();
+          prose[state.chapter].forEach(text=>{const p=document.createElement('p');p.textContent=text;body.append(p)});
+        }
+      }
+      app.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===state.view)));
+      app.querySelectorAll('[data-chapter]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.chapter)===state.chapter)));
+      const select=app.querySelector('[data-chapter-select]');if(select) select.value=String(state.chapter);
+      const label=app.querySelector('[data-chapter-label]');if(label) label.textContent=names[state.chapter];
+      app.querySelector('[data-context]').textContent=state.view==='text'?'Глава '+(state.chapter+1)+' из 3':state.view==='plan'?'План · глава 3':'Хронология книги';
+      pane.setAttribute('aria-label',state.view==='text'?names[state.chapter]:state.view==='plan'?'План сцен':'Хронология');
+    }
+    function renderChrome() {
+      app.classList.toggle('sl-materials-on',state.materials);
+      app.classList.toggle('sl-focus',state.focus);
+      materialPanel.hidden=!state.materials;
+      app.querySelectorAll('.sl-viewnav [data-action="materials"]').forEach(b=>b.setAttribute('aria-pressed',String(state.materials)));
+      const f=app.querySelector('[data-action="focus"]');f.setAttribute('aria-pressed',String(state.focus));
+      f.querySelector('span').textContent=state.focus?'Вернуть панели':'Только текст';
+      app.style.setProperty('--sl-reading-size',state.size+'px');app.style.setProperty('--sl-leading',state.leading);app.style.setProperty('--sl-measure',state.measure+'ch');
+    }
+    app.addEventListener('click',event=>{
+      const b=event.target.closest('button');if(!b || !app.contains(b))return;
+      if(b.dataset.view){state.view=b.dataset.view;state.focus=false;renderContent()}
+      else if(b.dataset.chapter!==undefined){state.chapter=Number(b.dataset.chapter);state.view='text';renderContent()}
+      else if(b.dataset.material){state.material=b.dataset.material;renderMaterial()}
+      else if(b.dataset.action==='materials'){state.materials=!state.materials}
+      else if(b.dataset.action==='focus'){state.focus=!state.focus;state.view='text';renderContent()}
+      else return;
+      renderChrome();persist();
+    });
+    app.querySelector('[data-chapter-select]')?.addEventListener('change',event=>{state.chapter=Number(event.target.value);state.view='text';renderContent();renderChrome();persist()});
+    renderContent();renderMaterial();renderChrome();entries.push({app,state,restore,renderContent,renderMaterial,renderChrome});
+    if(globalThis.Tweak){const tweak=new Tweak({container:app,onChange:renderChrome});tweak.addSlider(state,'size',{label:'Размер текста',min:17,max:23,step:1,unit:'px'});tweak.addSlider(state,'measure',{label:'Ширина строки',min:42,max:66,step:1,unit:'ch'});tweak.addSlider(state,'leading',{label:'Межстрочный интервал',min:1.5,max:2.1,step:.05});}
+  });
+  window.addEventListener('openai:set_globals',event=>{
+    const next=event.detail?.globals?.widgetState;if(!next)return;saved=next;
+    entries.forEach(entry=>{entry.restore(saved.modelContent?.designs?.[entry.app.dataset.design]);entry.renderContent();entry.renderMaterial();entry.renderChrome()});
+  });
+})();
+</script>

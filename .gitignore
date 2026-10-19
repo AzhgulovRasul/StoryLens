@@ -1,0 +1,14 @@
+node_modules/
+dist/
+target/
+src-tauri/target/
+src-tauri/gen/
+qa/output/
+release/
+tools/
+.env
+.env.*
+*.log
+playwright-report/
+.vscode/
+.idea/
